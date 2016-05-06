@@ -1,0 +1,25 @@
+
+<script type="text/x-handlebars-template" id="repo-list-template">
+<table class="table striped">
+<thead>
+  <tr>
+	<th> id</th>
+	<th>name </th>
+	<th>full name</th>  
+	<th>owner type</th>
+
+ </tr>
+</thead>
+<tbody>
+{{#each []}}
+<tr>
+	<td>{{this.id}}</td>
+	<td>{{this.name}} </td>
+	<td>{{this.full_name}}</td>
+ </tr>
+{{/each}}
+</tbody>
+
+
+</table>
+</script>
