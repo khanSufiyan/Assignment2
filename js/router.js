@@ -1,7 +1,6 @@
 var Router = Backbone.Router.extend({
         routes:{
-        '': 'home',
-        'repo/:id':'viewRepo'
+        '': 'home'
         }
       });
       var userList = new UserList();
@@ -13,8 +12,6 @@ var Router = Backbone.Router.extend({
       userList.render();
       });
       
-      router.on('route:viewRepo',function(id){
-      viewRepo.render(id);
-      });
+    
 
 Backbone.history.start();

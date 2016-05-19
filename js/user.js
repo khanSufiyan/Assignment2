@@ -26,6 +26,7 @@ var ViewRepo = Backbone.View.extend({
       
         render:function(id){
          var that = this;
+         //collection object
           var repo = new Repos([], { id: id });
           repo.fetch({
           success:function(repo){
@@ -54,6 +55,7 @@ var UserList = Backbone.View.extend({
 
      viewRepo: function(e){
       var id = $(e.currentTarget).data('id');
+      
                   //update url and pass true to execute route method
               var viewRepo = new ViewRepo();
                viewRepo.render(id);
@@ -63,6 +65,8 @@ var UserList = Backbone.View.extend({
         
           render:function(){
             var that = this;
+
+            //collection object
               var users = new Users();
               users.fetch({
               success:function(users){
@@ -82,8 +86,7 @@ var UserList = Backbone.View.extend({
           });
 var Router = Backbone.Router.extend({
         routes:{
-        '': 'home',
-        'repo/:id':'viewRepo'
+        '': 'home'
         }
       });
       var userList = new UserList();
@@ -95,8 +98,6 @@ var Router = Backbone.Router.extend({
       userList.render();
       });
       
-      router.on('route:viewRepo',function(id){
-      viewRepo.render(id);
-      });
+    
 
 Backbone.history.start();

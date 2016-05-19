@@ -3,6 +3,7 @@ var ViewRepo = Backbone.View.extend({
       
         render:function(id){
          var that = this;
+         //collection object
           var repo = new Repos([], { id: id });
           repo.fetch({
           success:function(repo){
