@@ -1,4 +1,5 @@
 var RepoListModel = Backbone.Model.extend({
+
   });
 
 var UserListModel = Backbone.Model.extend({
@@ -21,12 +22,12 @@ var Users = Backbone.Collection.extend({
 
       });
 var ViewRepo = Backbone.View.extend({
-      el:'#myModal',
+      el:'#modal-body',
        events: {
     'click .close' : "close",
     },
     close: function(){
-               this.$el.empty();
+           this.$el.empty();
               },
         render:function(id){
          var that = this;
@@ -41,6 +42,7 @@ var ViewRepo = Backbone.View.extend({
 
          /*  var template = _.template($('#repo-list-template').html(),{repo:repo.models});*/
           that.$el.html(html);
+            $('#myModal').modal('show');
         
             }
         
@@ -61,9 +63,12 @@ var UserList = Backbone.View.extend({
       var id = $(e.currentTarget).data('id');
 
           //update url and pass true to execute route method
+               
+               
               var viewRepo = new ViewRepo();
                viewRepo.render(id);
-               $('#myModal').modal('show');
+               
+             
               },
 
         

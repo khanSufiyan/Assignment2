@@ -1,10 +1,10 @@
 var ViewRepo = Backbone.View.extend({
-      el:'#myModal',
+      el:'#modal-body',
        events: {
     'click .close' : "close",
     },
     close: function(){
-               this.$el.empty();
+           this.$el.empty();
               },
         render:function(id){
          var that = this;
@@ -19,6 +19,7 @@ var ViewRepo = Backbone.View.extend({
 
          /*  var template = _.template($('#repo-list-template').html(),{repo:repo.models});*/
           that.$el.html(html);
+            $('#myModal').modal('show');
         
             }
         
