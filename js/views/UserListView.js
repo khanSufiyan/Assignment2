@@ -8,8 +8,8 @@ var UserList = Backbone.View.extend({
 
      viewRepo: function(e){
       var id = $(e.currentTarget).data('id');
-      
-                  //update url and pass true to execute route method
+
+          //update url and pass true to execute route method
               var viewRepo = new ViewRepo();
                viewRepo.render(id);
                $('#myModal').modal('show');
