@@ -23,12 +23,7 @@ var Users = Backbone.Collection.extend({
       });
 var ViewRepo = Backbone.View.extend({
       el:'#modal-body',
-       events: {
-    'click .close' : "close",
-    },
-    close: function(){
-           this.$el.empty();
-              },
+      
         render:function(id){
          var that = this;
          //collection object
