@@ -1,6 +1,11 @@
 var ViewRepo = Backbone.View.extend({
       el:'#myModal',
-      
+       events: {
+    'click .close' : "close",
+    },
+    close: function(){
+               this.$el.empty();
+              },
         render:function(id){
          var that = this;
          //collection object
